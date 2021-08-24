@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8" lang="pt">
+		<title>Evolução da TVBR</title>
+
+		<style>
+			body {
+            background-color: #000;
+            margin: 0;
+            width: 50%;
+            height: 50%;
+            font-family: sans-serif;
+        }
+
+         .menu{
+        	width: 70px;
+        	margin-left: auto;
+        	margin-right: auto;
+        	position: absolute;
+        	transform: translate(-50%, -50%);
+            margin-left: 265px;
+            top: 300px;
+            letter-spacing: 2.5px;
+            border: none;
+            outline: none;
+
+        }
+        .menu a{
+        	background-color: #522e13;
+        	text-align: center;
+        	color: black;
+        	display: block;
+        	padding: 8px;
+        	text-decoration: none;
+        	border-radius: 65%;
+        	margin-bottom: 9px;
+        	font-weight: 650;
+        	box-shadow: 0 3px #3e230f;
+        }
+        .menu a:hover, a:active{
+        	background-color: #150c05;
+        	color: white;
+			box-shadow: 0 3px #1a1a1a;
+			transform: translateY(3px);
+
+        }
+        .menu a.selected:link, a.selected:visited{
+        	background-color: #150c05;
+        	color: white;
+			box-shadow: 0 3px #1a1a1a;
+			transform: translateY(3px);
+
+        }
+
+        button{
+        	border: none;
+			cursor: pointer;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			font-size: 22px;
+			box-shadow: 2px 2px 6px #333333;
+			background-color: #000;
+			outline: none;
+			position: absolute;
+			margin-left: auto;
+        	margin-right: auto;
+        	margin-left: 265px;
+            top: 540px;
+            transform: translate(-50%, -50%);
+
+        }
+        button:hover{
+        	opacity: 60%;
+        }
+        button a{
+        	text-decoration: none;
+        	color: white;
+        	text-align: center;
+        	font-weight: 50;
+        	font-family: Helvetica;
+        	font-size: 20px;
+        }
+
+        button:after{
+			position: absolute;
+			width: 60px;
+			height: 60px;
+			top: -5px;
+			left: -5px;
+			transform-origin: 50% 50%;
+			border: 5px solid rgba(0, 0, 0, 0);
+			border-top: 5px solid #fff;
+			border-radius: 50%;
+			opacity: 60%;
+
+        }
+        button:before{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 5px;
+			height: 5px;
+			background: rgba(255, 255, 255, .5);
+			opacity: 60%;
+			border-radius: 50%;
+			transform: scale(1, 1) translate(-50%);
+			transform-origin: 50% 50%;
+         }
+         @keyframes ripple {
+			  0% {
+			    transform: scale(0, 0);
+			    opacity: 1;
+			  }
+			  20% {
+			    transform: scale(15, 15);
+			    opacity: 1;
+			  }
+			  100% {
+			    transform: scale(20, 20);
+			    opacity: 0;
+			  }
+			}
+
+		@keyframes spin {
+			  0% {
+			    opacity: 1;
+			    transform: rotate(0deg);
+			  }
+			  100% {
+			    opacity: 1;
+			    transform: rotate(360deg);
+			  }
+		}
+	    button:focus:not(:active)::before {
+			  animation: ripple 1s ease-out;
+		}
+
+		button:focus:not(:active)::after {
+			  animation: spin 1s cubic-bezier(0.46, 0.03, 0.52, 0.96) 1;
+		}
+
+		.botao-liga{
+			background-color: #000;
+			position: absolute;
+			width: 30px;
+        	margin-left: auto;
+        	margin-right: auto;
+        	transform: translate(-50%, -50%);
+            margin-left: 800px;
+            top: 88px;
+            border-radius: 60%;
+            outline: none;
+		}
+		.botao-liga a{
+            background-color: #000;
+        	text-align: center;
+        	color: white;
+        	display: block;
+        	padding: 6px;
+        	text-decoration: none;
+        	font-size: 8.5px;
+        	border-radius: 65%;
+        	margin-bottom: 4px;
+        	font-weight: 100;
+        	box-shadow: 0px 1px 0px #fff;
+        	font-family: Helvetica;
+		}
+		.botao-liga a:hover{
+			opacity: 50%;
+		}
+
+
+        .container-tv{
+        	width: 50%;
+        	display: block;
+        	margin-left: auto;
+        	margin-right: auto;
+
+        }
+        .video{
+        	width: 540px;
+        	height: 340px;
+        	display: block;
+        	margin-left: auto;
+        	margin-right: auto;
+        	position: absolute;
+        	transform: translate(-50%, -50%);
+            margin-left: 420px;
+            top: 295px;
+            border-radius: 10%;
+
+        }
+        .title{
+        	width: 500px;
+        	height: 455px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-left: 705px;
+            top: 695px;
+        	position: absolute;
+        	transform: translate(-50%, -50%);
+        	font-family: Helvetica;
+        	text-align: justify;
+        	color: rgba(0,0,0,1);
+
+        }
+        .title h1{
+        	font-size: 18px;
+        }
+        .title h1:hover{
+        	text-shadow: 1.5px 1.5px 3px white;
+        }
+
+        .texto{
+        	width: 500px;
+        	height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-left: 600px;
+            top: 690px;
+        	position: absolute;
+        	transform: translate(-50%, -50%);
+        	font-family: Helvetica;
+        	text-align: center;
+        	font-size: 20px;
+        	color: rgba(0,0,0,0.8);
+
+        }
+        .texto a{
+        	text-decoration: none;
+        	color: #00134d;
+
+
+        }
+        .texto a:hover{
+        	text-decoration: underline;
+        }
+        .texto a:active{
+        	background-color: black;
+        }
+        p{
+        	font-size: 16px;
+        	font-weight: 550;
+
+        }
+        p:hover{
+
+        }
+        .canal{
+        	position: absolute;
+        	transform: translate(-50%, -50%);
+        	width: 500px;
+        	height: 200px;
+        	margin-left: auto;
+        	margin-right: auto;
+        	top: 245px;
+        	margin-left: 955px;
+        	color: #00cc00 ;
+        	font-family: Courier New;
+        	font-size: 12px;
+        	font-weight: 100;
+
+        }
+
+
+
+		</style>
+		
+	</head>
+
+	<body>
+		<div id="main">
+			<div class="container-tv">
+				<img class="teve" src="imagens/TEVE2.png">
+				<video class="video" src="videos/comercial1971.mp4" autoplay muted controls loop></video>
+
+			</div>
+
+		    <div class="menu">
+		    		<a href="1950.html">1950</a>
+	                <a href="1963.html">1963</a>
+	                <a href="1971.html">1971</a>
+	                <a href="1981.html">1981</a>
+	                <a href="1991.html">1991</a>
+	                <a href="1996.html">1996</a>
+	                <a href="2006.html">2006</a>
+	                <a href="2011.html">2011</a>
+	                <a href="2017.html">2017</a>
+		    </div>
+
+		    <div class="botao-liga">
+		    	<a href="index.html">OFF</a>
+		    </div>
+
+		    <button>
+		    	<a href="1971.html">CH</a>
+		    </button>
+
+		    <div class="canal">
+		    	<h1>CH 7</h1>
+		    </div>
+
+		    <div class="title">
+		    	<h1>Censura e Regulação (1971 – 1980)</h1>
+		    </div>
+
+		    <div class="texto">
+		    	<p>Implantação da TV em cores no país em 1972. Governo Ditatorial fazia-se presente nas emissoras acompanhando e controlando tudo que era dito e produzido. Novela da Globo <a href="https://memoriaglobo.globo.com/entretenimento/novelas/roque-santeiro//" target="_blank">Roque Santeiro</a> é impedida de ser transmitida em 1975.
+		    	</p>
+		    </div>
+
+		</div>
+
+	</body>
+</html>
